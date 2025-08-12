@@ -385,7 +385,7 @@ p {
 
 .hero-scroll {
   position: absolute;
-  bottom: 2rem;
+  bottom: 3rem;
   left: 50%;
   transform: translateX(-50%);
   text-align: center;
@@ -400,7 +400,7 @@ p {
 
 .hero-dots {
   position: absolute;
-  bottom: 4rem;
+  bottom: 1.25rem; /* slightly lower to give more room above */
   left: 50%;
   transform: translateX(-50%);
   display: flex;
@@ -1620,6 +1620,8 @@ p {
   .legal-links {
     justify-content: center;
   }
+  .hero-scroll { bottom: 5rem; }
+  .hero-dots { bottom: 1rem; }
 }
 
 @media (max-width: 480px) {

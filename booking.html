@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+     <!-- Navbar -->
+     <nav class="navbar">
+        <div class="container">
+            <a href="#" class="logo">
+                <i class="fas fa-camera"></i>
+                <span>HotShoot</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="#keunggulan" class="nav-link">Keunggulan</a></li>
+                <li><a href="#paket" class="nav-link">Paket</a></li>
+                <li><a href="#tentang" class="nav-link">Tentang Kami</a></li>
+                <li><a href="#kontak" class="btn-nav">Kontak</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Booking Section -->
+    <section id="booking" class="booking">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-subtitle">Mulai Sekarang</span>
+                <h2 class="section-title">Book Sesi Anda</h2>
+                <p class="section-description">Isi form di bawah ini dan kami akan menghubungi Anda segera untuk konfirmasi.</p>
+            </div>
+            <div class="booking-container">
+                <div class="booking-info">
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-phone-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Hubungi Kami</h4>
+                            <p>+62 859-2205-3573</p>
+                            <span>Sen-Jum, 9:00-18:00</span>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Email</h4>
+                            <p>info@hotshoot.com</p>
+                            <span>Respon dalam 2 jam</span>
+                        </div>
+                    </div>
+                    <div class="info-card">
+                        <div class="info-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="info-content">
+                            <h4>Studio Kami</h4>
+                            <p>123 Creative Lane, Jakarta</p>
+                            <span>Kunjungan dengan appointment</span>
+                        </div>
+                    </div>
+                    <a href="galeri.html" class="btn btn-primary btn-block">
+                        <i class="fas fa-paper-plane"></i>
+                        Lihat Galeri
+                    </a>
+                </div>
+                <form id="booking-form" class="booking-form">
+                    <div class="form-header">
+                        <h3>Formulir Booking</h3>
+                        <p>Semua field wajib diisi</p>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="nama">Nama Lengkap</label>
+                            <input id="nama" type="text" required>
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input id="email" type="email" required>
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="whatsapp">Nomor WhatsApp</label>
+                            <input id="whatsapp" type="tel" required>
+                            <i class="fab fa-whatsapp"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="paket">Pilih Paket</label>
+                            <select id="paket" required>
+                                <option value="">Pilih paket</option>
+                                <option value="Sesi Per Jam">Sesi Per Jam</option>
+                                <option value="Liputan Acara">Liputan Acara</option>
+                                <option value="Paket Premium">Paket Premium</option>
+                            </select>
+                            <i class="fas fa-camera"></i>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="tanggal">Tanggal Pilihan</label>
+                            <input id="tanggal" type="date" required>
+                            <i class="fas fa-calendar"></i>
+                        </div>
+                        <div class="form-group">
+                            <label for="waktu">Waktu Pilihan</label>
+                            <input id="waktu" type="time" required>
+                            <i class="fas fa-clock"></i>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="lokasi">Lokasi</label>
+                        <input id="lokasi" type="text" required>
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div class="form-group">
+                        <label for="catatan">Catatan Khusus</label>
+                        <textarea id="catatan" rows="4" placeholder="Ceritakan konsep atau ide khusus yang Anda inginkan..."></textarea>
+                        <i class="fas fa-edit"></i>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-paper-plane"></i>
+                        Kirim Permintaan Booking
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+    
+    <script>
+    (function() {
+      var hamburger = document.querySelector('.hamburger');
+      var navLinks = document.querySelector('.nav-links');
+      if (!hamburger || !navLinks) return;
+
+      hamburger.addEventListener('click', function() {
+        var isOpen = navLinks.getAttribute('data-open') === 'true';
+        navLinks.setAttribute('data-open', String(!isOpen));
+        navLinks.style.display = isOpen ? '' : 'block';
+      });
+
+      // Tutup menu setelah klik link (berguna di mobile)
+      Array.prototype.slice.call(navLinks.querySelectorAll('a')).forEach(function(a) {
+        a.addEventListener('click', function() {
+          navLinks.setAttribute('data-open', 'false');
+          navLinks.style.display = '';
+        });
+      });
+    })();
+    </script>
+    
+</body>
+</html>
